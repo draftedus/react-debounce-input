@@ -89,8 +89,9 @@ export const DebounceInput = React.createClass({
 
   doNotify(...args) {
     const {onChange} = this.props;
-
-    onChange(...args);
+    if (this.isDebouncing) {
+      onChange(...args);
+    }
   },
 
 
